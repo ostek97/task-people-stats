@@ -23,4 +23,11 @@ class PeopleStats {
     public long count() {
         return people.size();
     }
+
+    public long countUniqueLastNames() {
+        return people.stream()
+                .map(Person::getLastName)
+                .distinct()
+                .count();
+    }
 }
